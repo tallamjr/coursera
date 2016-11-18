@@ -18,3 +18,5 @@ slprj/
 # Session info
 octave-workspace
 
+# Jupyter Notebook
+.ipynb_checkpoints
