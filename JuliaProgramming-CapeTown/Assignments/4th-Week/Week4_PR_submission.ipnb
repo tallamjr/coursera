@@ -1,0 +1,521 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Week 4 – Working with data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Week 4 Peer Review - Working with Distributions and DataFrames. To help you with this task, comments are added to each cell."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# Import the required packages\n",
+    "using Distributions, DataFrames"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# Seed the random number generator\n",
+    "srand(1234);"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10-element Array{Float64,1}:\n",
+       "  0.28965 \n",
+       "  0.439391\n",
+       "  0.166789\n",
+       " -0.608117\n",
+       " -1.57543 \n",
+       " -1.31724 \n",
+       " -1.0044  \n",
+       " -0.119859\n",
+       "  0.250064\n",
+       "  0.860593"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr = rand(Normal(0,1), 10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Column arr mean: -0.26185570135582126 variance: 0.670259883788098\n"
+     ]
+    }
+   ],
+   "source": [
+    "println(\"Column arr mean: \", mean(arr[:,1]), \" variance: \", var(arr[:,1]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "30x3 Array{Float64,2}:\n",
+       "  0.283652  10.7695   13.0\n",
+       " -0.972172  11.4623   11.0\n",
+       "  0.97898    8.92798  15.0\n",
+       "  0.203876  11.1237   14.0\n",
+       "  0.129029  10.4959   15.0\n",
+       " -0.923066  11.1667   11.0\n",
+       "  0.029566  14.2696   15.0\n",
+       "  0.826251   9.09545   6.0\n",
+       " -1.62562    6.19014  12.0\n",
+       " -0.370354   9.70398   7.0\n",
+       "  1.43165    9.39897  10.0\n",
+       " -1.64752    8.96997  13.0\n",
+       " -1.01467    7.7334   13.0\n",
+       "  ⋮                       \n",
+       " -1.59106    7.01611  11.0\n",
+       " -0.473003   4.32038  10.0\n",
+       "  0.523     10.6883    9.0\n",
+       " -0.187617   9.34693   7.0\n",
+       " -0.732161  10.2264   13.0\n",
+       "  1.27259    9.64128  12.0\n",
+       " -1.89922    8.9611   15.0\n",
+       "  0.965147  10.711    14.0\n",
+       " -0.152251   9.30351  13.0\n",
+       "  1.67056    9.25995   7.0\n",
+       "  1.79268   10.7079   15.0\n",
+       " -0.587392   7.98343  15.0"
+      ]
+     },
+     "execution_count": 38,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Question 4: Create the 3 x 30 array named array_1\n",
+    "array_1 = [randn(30) rand(Normal(10,2), 30) rand(5:15,30)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Column 1 mean: -0.15898924285271124 variance: 1.114908895052153\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question 5: Mean and variance of column 1\n",
+    "println(\"Column 1 mean: \", mean(array_1[:,1]), \" variance: \", var(array_1[:,1]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Column 2 mean: 9.830841836486222 variance: 4.156501157443288\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question 5 (continued): Mean and variance of column 2\n",
+    "println(\"Column 2 mean: \", mean(array_1[:,2]), \" variance: \", var(array_1[:,2]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Column 3 mean: 11.266666666666667 variance: 9.650574712643678\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question 5 (continued): Mean and variance of column 3\n",
+    "println(\"Column 3 mean: \", mean(array_1[:,3]), \" variance: \", var(array_1[:,3]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<table class=\"data-frame\"><thead><tr><th></th><th>x1</th><th>x2</th><th>x3</th></tr></thead><tbody><tr><th>1</th><td>0.28365194059498605</td><td>10.769478320703694</td><td>13.0</td></tr><tr><th>2</th><td>-0.9721716370799882</td><td>11.462344419193474</td><td>11.0</td></tr><tr><th>3</th><td>0.978980004429942</td><td>8.92798082032801</td><td>15.0</td></tr><tr><th>4</th><td>0.20387595100190337</td><td>11.1236850697193</td><td>14.0</td></tr><tr><th>5</th><td>0.12902876875931305</td><td>10.495932452749573</td><td>15.0</td></tr><tr><th>6</th><td>-0.9230659230041565</td><td>11.166715048121029</td><td>11.0</td></tr><tr><th>7</th><td>0.029565956954443036</td><td>14.269574449376176</td><td>15.0</td></tr><tr><th>8</th><td>0.8262514881749508</td><td>9.095452107692724</td><td>6.0</td></tr><tr><th>9</th><td>-1.6256150817463313</td><td>6.1901411553985355</td><td>12.0</td></tr><tr><th>10</th><td>-0.370353821489075</td><td>9.70397535725041</td><td>7.0</td></tr><tr><th>11</th><td>1.4316537102151916</td><td>9.398967370084558</td><td>10.0</td></tr><tr><th>12</th><td>-1.6475155316032095</td><td>8.969967167278039</td><td>13.0</td></tr><tr><th>13</th><td>-1.0146667630994541</td><td>7.733402394464072</td><td>13.0</td></tr><tr><th>14</th><td>-0.9681945334092295</td><td>13.732188381121023</td><td>5.0</td></tr><tr><th>15</th><td>0.4744683813822807</td><td>9.598436822887713</td><td>6.0</td></tr><tr><th>16</th><td>-1.5481288463029368</td><td>10.432431474960676</td><td>9.0</td></tr><tr><th>17</th><td>0.389223760476551</td><td>13.246129823891366</td><td>10.0</td></tr><tr><th>18</th><td>-1.047935705523738</td><td>10.442113415533962</td><td>12.0</td></tr><tr><th>19</th><td>-1.591060989850591</td><td>7.016109077664577</td><td>11.0</td></tr><tr><th>20</th><td>-0.47300258151163427</td><td>4.320375174582971</td><td>10.0</td></tr><tr><th>21</th><td>0.5230001519213634</td><td>10.688325175242237</td><td>9.0</td></tr><tr><th>22</th><td>-0.18761736894830652</td><td>9.346928221102655</td><td>7.0</td></tr><tr><th>23</th><td>-0.7321608989850492</td><td>10.226417418653064</td><td>13.0</td></tr><tr><th>24</th><td>1.2725914022859486</td><td>9.641284622681592</td><td>12.0</td></tr><tr><th>25</th><td>-1.899221574511888</td><td>8.961099782876383</td><td>15.0</td></tr><tr><th>26</th><td>0.9651471227595213</td><td>10.71100854427851</td><td>14.0</td></tr><tr><th>27</th><td>-0.15225125061108066</td><td>9.303509872352462</td><td>13.0</td></tr><tr><th>28</th><td>1.670561142317524</td><td>9.259949949882444</td><td>7.0</td></tr><tr><th>29</th><td>1.792677757348853</td><td>10.707896250106417</td><td>15.0</td></tr><tr><th>30</th><td>-0.5873923165274401</td><td>7.9834349544090415</td><td>15.0</td></tr></tbody></table>"
+      ],
+      "text/plain": [
+       "30×3 DataFrames.DataFrame\n",
+       "│ Row │ x1        │ x2      │ x3   │\n",
+       "├─────┼───────────┼─────────┼──────┤\n",
+       "│ 1   │ 0.283652  │ 10.7695 │ 13.0 │\n",
+       "│ 2   │ -0.972172 │ 11.4623 │ 11.0 │\n",
+       "│ 3   │ 0.97898   │ 8.92798 │ 15.0 │\n",
+       "│ 4   │ 0.203876  │ 11.1237 │ 14.0 │\n",
+       "│ 5   │ 0.129029  │ 10.4959 │ 15.0 │\n",
+       "│ 6   │ -0.923066 │ 11.1667 │ 11.0 │\n",
+       "│ 7   │ 0.029566  │ 14.2696 │ 15.0 │\n",
+       "│ 8   │ 0.826251  │ 9.09545 │ 6.0  │\n",
+       "│ 9   │ -1.62562  │ 6.19014 │ 12.0 │\n",
+       "│ 10  │ -0.370354 │ 9.70398 │ 7.0  │\n",
+       "│ 11  │ 1.43165   │ 9.39897 │ 10.0 │\n",
+       "⋮\n",
+       "│ 19  │ -1.59106  │ 7.01611 │ 11.0 │\n",
+       "│ 20  │ -0.473003 │ 4.32038 │ 10.0 │\n",
+       "│ 21  │ 0.523     │ 10.6883 │ 9.0  │\n",
+       "│ 22  │ -0.187617 │ 9.34693 │ 7.0  │\n",
+       "│ 23  │ -0.732161 │ 10.2264 │ 13.0 │\n",
+       "│ 24  │ 1.27259   │ 9.64128 │ 12.0 │\n",
+       "│ 25  │ -1.89922  │ 8.9611  │ 15.0 │\n",
+       "│ 26  │ 0.965147  │ 10.711  │ 14.0 │\n",
+       "│ 27  │ -0.152251 │ 9.30351 │ 13.0 │\n",
+       "│ 28  │ 1.67056   │ 9.25995 │ 7.0  │\n",
+       "│ 29  │ 1.79268   │ 10.7079 │ 15.0 │\n",
+       "│ 30  │ -0.587392 │ 7.98343 │ 15.0 │"
+      ]
+     },
+     "execution_count": 42,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Question 6: Import array_1 into a DataFrame named df\n",
+    "df = DataFrame(array_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "x1\n",
+      "Min      -1.899221574511888\n",
+      "1st Qu.  -0.9711773611622985\n",
+      "Median   -0.1699343097796936\n",
+      "Mean     -0.15898924285271124\n",
+      "3rd Qu.  0.5108672092865927\n",
+      "Max      1.792677757348853\n",
+      "NAs      0\n",
+      "NA%      0.0%\n",
+      "\n",
+      "x2\n",
+      "Min      4.320375174582971\n",
+      "1st Qu.  9.00133840238171\n",
+      "Median   9.672629989966001\n",
+      "Mean     9.830841836486222\n",
+      "3rd Qu.  10.710230470735485\n",
+      "Max      14.269574449376176\n",
+      "NAs      0\n",
+      "NA%      0.0%\n",
+      "\n",
+      "x3\n",
+      "Min      5.0\n",
+      "1st Qu.  9.25\n",
+      "Median   12.0\n",
+      "Mean     11.266666666666667\n",
+      "3rd Qu.  13.75\n",
+      "Max      15.0\n",
+      "NAs      0\n",
+      "NA%      0.0%\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "describe(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<table class=\"data-frame\"><thead><tr><th></th><th>Var1</th><th>Var2</th><th>Var3</th></tr></thead><tbody><tr><th>1</th><td>0.28365194059498605</td><td>10.769478320703694</td><td>13.0</td></tr><tr><th>2</th><td>-0.9721716370799882</td><td>11.462344419193474</td><td>11.0</td></tr><tr><th>3</th><td>0.978980004429942</td><td>8.92798082032801</td><td>15.0</td></tr><tr><th>4</th><td>0.20387595100190337</td><td>11.1236850697193</td><td>14.0</td></tr><tr><th>5</th><td>0.12902876875931305</td><td>10.495932452749573</td><td>15.0</td></tr><tr><th>6</th><td>-0.9230659230041565</td><td>11.166715048121029</td><td>11.0</td></tr><tr><th>7</th><td>0.029565956954443036</td><td>14.269574449376176</td><td>15.0</td></tr><tr><th>8</th><td>0.8262514881749508</td><td>9.095452107692724</td><td>6.0</td></tr><tr><th>9</th><td>-1.6256150817463313</td><td>6.1901411553985355</td><td>12.0</td></tr><tr><th>10</th><td>-0.370353821489075</td><td>9.70397535725041</td><td>7.0</td></tr><tr><th>11</th><td>1.4316537102151916</td><td>9.398967370084558</td><td>10.0</td></tr><tr><th>12</th><td>-1.6475155316032095</td><td>8.969967167278039</td><td>13.0</td></tr><tr><th>13</th><td>-1.0146667630994541</td><td>7.733402394464072</td><td>13.0</td></tr><tr><th>14</th><td>-0.9681945334092295</td><td>13.732188381121023</td><td>5.0</td></tr><tr><th>15</th><td>0.4744683813822807</td><td>9.598436822887713</td><td>6.0</td></tr><tr><th>16</th><td>-1.5481288463029368</td><td>10.432431474960676</td><td>9.0</td></tr><tr><th>17</th><td>0.389223760476551</td><td>13.246129823891366</td><td>10.0</td></tr><tr><th>18</th><td>-1.047935705523738</td><td>10.442113415533962</td><td>12.0</td></tr><tr><th>19</th><td>-1.591060989850591</td><td>7.016109077664577</td><td>11.0</td></tr><tr><th>20</th><td>-0.47300258151163427</td><td>4.320375174582971</td><td>10.0</td></tr><tr><th>21</th><td>0.5230001519213634</td><td>10.688325175242237</td><td>9.0</td></tr><tr><th>22</th><td>-0.18761736894830652</td><td>9.346928221102655</td><td>7.0</td></tr><tr><th>23</th><td>-0.7321608989850492</td><td>10.226417418653064</td><td>13.0</td></tr><tr><th>24</th><td>1.2725914022859486</td><td>9.641284622681592</td><td>12.0</td></tr><tr><th>25</th><td>-1.899221574511888</td><td>8.961099782876383</td><td>15.0</td></tr><tr><th>26</th><td>0.9651471227595213</td><td>10.71100854427851</td><td>14.0</td></tr><tr><th>27</th><td>-0.15225125061108066</td><td>9.303509872352462</td><td>13.0</td></tr><tr><th>28</th><td>1.670561142317524</td><td>9.259949949882444</td><td>7.0</td></tr><tr><th>29</th><td>1.792677757348853</td><td>10.707896250106417</td><td>15.0</td></tr><tr><th>30</th><td>-0.5873923165274401</td><td>7.9834349544090415</td><td>15.0</td></tr></tbody></table>"
+      ],
+      "text/plain": [
+       "30×3 DataFrames.DataFrame\n",
+       "│ Row │ Var1      │ Var2    │ Var3 │\n",
+       "├─────┼───────────┼─────────┼──────┤\n",
+       "│ 1   │ 0.283652  │ 10.7695 │ 13.0 │\n",
+       "│ 2   │ -0.972172 │ 11.4623 │ 11.0 │\n",
+       "│ 3   │ 0.97898   │ 8.92798 │ 15.0 │\n",
+       "│ 4   │ 0.203876  │ 11.1237 │ 14.0 │\n",
+       "│ 5   │ 0.129029  │ 10.4959 │ 15.0 │\n",
+       "│ 6   │ -0.923066 │ 11.1667 │ 11.0 │\n",
+       "│ 7   │ 0.029566  │ 14.2696 │ 15.0 │\n",
+       "│ 8   │ 0.826251  │ 9.09545 │ 6.0  │\n",
+       "│ 9   │ -1.62562  │ 6.19014 │ 12.0 │\n",
+       "│ 10  │ -0.370354 │ 9.70398 │ 7.0  │\n",
+       "│ 11  │ 1.43165   │ 9.39897 │ 10.0 │\n",
+       "⋮\n",
+       "│ 19  │ -1.59106  │ 7.01611 │ 11.0 │\n",
+       "│ 20  │ -0.473003 │ 4.32038 │ 10.0 │\n",
+       "│ 21  │ 0.523     │ 10.6883 │ 9.0  │\n",
+       "│ 22  │ -0.187617 │ 9.34693 │ 7.0  │\n",
+       "│ 23  │ -0.732161 │ 10.2264 │ 13.0 │\n",
+       "│ 24  │ 1.27259   │ 9.64128 │ 12.0 │\n",
+       "│ 25  │ -1.89922  │ 8.9611  │ 15.0 │\n",
+       "│ 26  │ 0.965147  │ 10.711  │ 14.0 │\n",
+       "│ 27  │ -0.152251 │ 9.30351 │ 13.0 │\n",
+       "│ 28  │ 1.67056   │ 9.25995 │ 7.0  │\n",
+       "│ 29  │ 1.79268   │ 10.7079 │ 15.0 │\n",
+       "│ 30  │ -0.587392 │ 7.98343 │ 15.0 │"
+      ]
+     },
+     "execution_count": 50,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Question 7: Change the names of the columns to Var1, Var2, and Var3\n",
+    "#rename(df,:x1, :Var1)\n",
+    "#rename!(df,:x2, :Var2)\n",
+    "rename!(df,:x3, :Var3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<table class=\"data-frame\"><thead><tr><th></th><th>Var1</th><th>Var2</th><th>Var3</th></tr></thead><tbody><tr><th>1</th><td>1.4316537102151916</td><td>9.398967370084558</td><td>10.0</td></tr><tr><th>2</th><td>-1.6475155316032095</td><td>8.969967167278039</td><td>13.0</td></tr><tr><th>3</th><td>-1.0146667630994541</td><td>7.733402394464072</td><td>13.0</td></tr><tr><th>4</th><td>-0.9681945334092295</td><td>13.732188381121023</td><td>5.0</td></tr><tr><th>5</th><td>0.4744683813822807</td><td>9.598436822887713</td><td>6.0</td></tr><tr><th>6</th><td>-1.5481288463029368</td><td>10.432431474960676</td><td>9.0</td></tr><tr><th>7</th><td>0.389223760476551</td><td>13.246129823891366</td><td>10.0</td></tr><tr><th>8</th><td>-1.047935705523738</td><td>10.442113415533962</td><td>12.0</td></tr><tr><th>9</th><td>-1.591060989850591</td><td>7.016109077664577</td><td>11.0</td></tr><tr><th>10</th><td>-0.47300258151163427</td><td>4.320375174582971</td><td>10.0</td></tr><tr><th>11</th><td>0.5230001519213634</td><td>10.688325175242237</td><td>9.0</td></tr><tr><th>12</th><td>-0.18761736894830652</td><td>9.346928221102655</td><td>7.0</td></tr><tr><th>13</th><td>-0.7321608989850492</td><td>10.226417418653064</td><td>13.0</td></tr><tr><th>14</th><td>1.2725914022859486</td><td>9.641284622681592</td><td>12.0</td></tr><tr><th>15</th><td>-1.899221574511888</td><td>8.961099782876383</td><td>15.0</td></tr><tr><th>16</th><td>0.9651471227595213</td><td>10.71100854427851</td><td>14.0</td></tr><tr><th>17</th><td>-0.15225125061108066</td><td>9.303509872352462</td><td>13.0</td></tr><tr><th>18</th><td>1.670561142317524</td><td>9.259949949882444</td><td>7.0</td></tr><tr><th>19</th><td>1.792677757348853</td><td>10.707896250106417</td><td>15.0</td></tr><tr><th>20</th><td>-0.5873923165274401</td><td>7.9834349544090415</td><td>15.0</td></tr></tbody></table>"
+      ],
+      "text/plain": [
+       "20×3 DataFrames.DataFrame\n",
+       "│ Row │ Var1      │ Var2    │ Var3 │\n",
+       "├─────┼───────────┼─────────┼──────┤\n",
+       "│ 1   │ 1.43165   │ 9.39897 │ 10.0 │\n",
+       "│ 2   │ -1.64752  │ 8.96997 │ 13.0 │\n",
+       "│ 3   │ -1.01467  │ 7.7334  │ 13.0 │\n",
+       "│ 4   │ -0.968195 │ 13.7322 │ 5.0  │\n",
+       "│ 5   │ 0.474468  │ 9.59844 │ 6.0  │\n",
+       "│ 6   │ -1.54813  │ 10.4324 │ 9.0  │\n",
+       "│ 7   │ 0.389224  │ 13.2461 │ 10.0 │\n",
+       "│ 8   │ -1.04794  │ 10.4421 │ 12.0 │\n",
+       "│ 9   │ -1.59106  │ 7.01611 │ 11.0 │\n",
+       "│ 10  │ -0.473003 │ 4.32038 │ 10.0 │\n",
+       "│ 11  │ 0.523     │ 10.6883 │ 9.0  │\n",
+       "│ 12  │ -0.187617 │ 9.34693 │ 7.0  │\n",
+       "│ 13  │ -0.732161 │ 10.2264 │ 13.0 │\n",
+       "│ 14  │ 1.27259   │ 9.64128 │ 12.0 │\n",
+       "│ 15  │ -1.89922  │ 8.9611  │ 15.0 │\n",
+       "│ 16  │ 0.965147  │ 10.711  │ 14.0 │\n",
+       "│ 17  │ -0.152251 │ 9.30351 │ 13.0 │\n",
+       "│ 18  │ 1.67056   │ 9.25995 │ 7.0  │\n",
+       "│ 19  │ 1.79268   │ 10.7079 │ 15.0 │\n",
+       "│ 20  │ -0.587392 │ 7.98343 │ 15.0 │"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Question 8: Create and new DataFrame named df2 from the last 20 rows of df\n",
+    "df2 = DataFrame(tail(df, 20))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Var1\n",
+      "Min      -1.899221574511888\n",
+      "1st Qu.  -1.0229839987055251\n",
+      "Median   -0.3303099752299704\n",
+      "Mean     -0.16649124660886622\n",
+      "3rd Qu.  0.6335368946309029\n",
+      "Max      1.792677757348853\n",
+      "NAs      0\n",
+      "NA%      0.0%\n",
+      "\n",
+      "Var2\n",
+      "Min      4.320375174582971\n",
+      "1st Qu.  8.967750321177625\n",
+      "Median   9.498702096486134\n",
+      "Mean     9.585998794702688\n",
+      "3rd Qu.  10.503666355461032\n",
+      "Max      13.732188381121023\n",
+      "NAs      0\n",
+      "NA%      0.0%\n",
+      "\n",
+      "Var3\n",
+      "Min      5.0\n",
+      "1st Qu.  9.0\n",
+      "Median   11.5\n",
+      "Mean     10.95\n",
+      "3rd Qu.  13.0\n",
+      "Max      15.0\n",
+      "NAs      0\n",
+      "NA%      0.0%\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Question 9: Calculate simple descriptive statistics of all the columns in df2 using the describe() function\n",
+    "describe(df2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# Question 10: Add a column to df2 named Cat1 to df2 consisting of randomly selecting either the strings GraoupA or GroupB\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# Question 11: Create a new DataFrame named df3\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# Question 12: Change indicated values to empty entries\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# Question 13: Create DataFrame df4 that contains no rows with NaN (NA) values\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 0.4.1",
+   "language": "julia",
+   "name": "julia-0.4"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "0.4.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
