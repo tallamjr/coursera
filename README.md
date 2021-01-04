@@ -8,6 +8,12 @@ attempted on the Coursera platform
 - Hyperlinks are to repositories, not to course webpages.
 - If there are broken links, this more likely means the repository is temporarily private.
 
+### Individual Courses
+
+* [University of Cape Town: Julia Scientific Programming](https://github.com/tallamjr/cape-town-scientific-julia)
+* [North-western University: Digital Image and Video Processing](https://github.com/tallamjr/nw-image-video-processing)
+* [Stanford: Machine Learning](https://github.com/tallamjr/stanford-ml)
+
 ### Specializations
 
 * [Deeplearning.ai: TensorFlow: Data and Deployment](https://github.com/tallamjr/tensorflow-data-deployment)
@@ -25,7 +31,7 @@ attempted on the Coursera platform
     2. ~~Convolutional Neural Networks in TensorFlow~~
     3. ~~Natural Language Processing in TensorFlow~~
     4. ~~Sequences, Time Series and Prediction~~
-* [Deeplearning.ai: Deep Learning](https://github.com/tallamjr/deeplearning-ai)
+* [Deeplearning.ai: Deep Learning [TF1.x]](https://github.com/tallamjr/deeplearning-ai)
     1. ~~Neural Networks and Deep Learning~~
     2. ~~Improving Deep Neural Networks~~
     3. ~~Structuring Machine Learning Projects~~
@@ -62,8 +68,3 @@ attempted on the Coursera platform
     2. Mathematics for Machine Learning: Multivariate Calculus
     3. Mathematics for Machine Learning: PCA
 
-### Individual Courses
-
-* [University of Cape Town: Julia Scientific Programming](https://github.com/tallamjr/cape-town-scientific-julia)
-* [North-western University: Digital Image and Video Processing](https://github.com/tallamjr/nw-image-video-processing)
-* [Stanford: Machine Learning](https://github.com/tallamjr/stanford-ml)
