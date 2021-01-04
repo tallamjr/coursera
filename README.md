@@ -63,8 +63,10 @@ attempted on the Coursera platform
     2. Probabilistic Graphical Models 2: Inference
     3. Probabilistic Graphical Models 3: Learning
 * [Imperial College London: Deep Learning in TensorFlow 2.x](https://github.com/tallamjr/imperial-tf2-deeplearning)
+    1. ~~Getting started with TensorFlow 2~~
+    2. Customising your models with TensorFlow 2
+    3. Probabilistic Deep Learning with TensorFlow 2
 * [Imperial College London: Mathematics for Machine Learning](https://github.com/tallamjr/imperial-ml-mathematics)
     1. Mathematics for Machine Learning: Linear Algebra
     2. Mathematics for Machine Learning: Multivariate Calculus
     3. Mathematics for Machine Learning: PCA
-
