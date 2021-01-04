@@ -10,40 +10,60 @@ attempted on the Coursera platform
 
 ### Specializations
 
-* Deeplearning.ai: TensorFlow: Advanced Techniques
-    1. ~~Custom Models, Layers, and Loss Functions with TensorFlow~~
-    2. ~~Custom and Distributed Training with TensorFlow~~
-    3. Advanced Computer Vision with TensorFlow
-    4. Apply Generative Adversarial Networks (GANs)
-* Deeplearning.ai: TensorFlow: Data and Deployment
+* [Deeplearning.ai: TensorFlow: Data and Deployment](https://github.com/tallamjr/tensorflow-data-deployment)
     1. Browser-based Models with TensorFlow.js
     2. Device-based Models with TensorFlow Lite
     3. Data Pipelines with TensorFlow Data Services
     4. Advanced Deployment Scenarios with TensorFlow
-* Deeplearning.ai: TensorFlow in Practice
-* Deeplearning.ai: Deep Learning
-    1. Neural Networks and Deep Learning
-    2. Improving Deep Neural Networks
-    3. Structuring Machine Learning Projects
-    4. Convolutional Neural Networks
-    5. Sequence Models
-* University of Alberta: Reinforcement Learning
-* IBM: Advanced Data Science
-* EPFL: Functional Scala
-* EPFL: Digital Signal Processing
-* Stanford: Probabilistic Graphical Models
+* [Deeplearning.ai: TensorFlow: Advanced Techniques](https://github.com/tallamjr/advanced-tensorflow)
+    1. ~~Custom Models, Layers, and Loss Functions with TensorFlow~~
+    2. ~~Custom and Distributed Training with TensorFlow~~
+    3. Advanced Computer Vision with TensorFlow
+    4. Apply Generative Adversarial Networks (GANs)
+* [Deeplearning.ai: TensorFlow in Practice](https://github.com/tallamjr/tensorflow-in-practice)
+    1. ~~Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning~~
+    2. ~~Convolutional Neural Networks in TensorFlow~~
+    3. ~~Natural Language Processing in TensorFlow~~
+    4. ~~Sequences, Time Series and Prediction~~
+* [Deeplearning.ai: Deep Learning](https://github.com/tallamjr/deeplearning-ai)
+    1. ~~Neural Networks and Deep Learning~~
+    2. ~~Improving Deep Neural Networks~~
+    3. ~~Structuring Machine Learning Projects~~
+    4. ~~Convolutional Neural Networks~~
+    5. ~~Sequence Models~~
+* [IBM: Advanced Data Science](https://github.com/tallamjr/ibm-advanced-data-science)
+    1. ~~Fundamentals of Scalable Data Science~~
+    2. ~~Advanced Machine Learning and Signal Processing~~
+    3. ~~Applied AI with DeepLearning~~
+    4. Advanced Data Science Capstone
+* [University of Alberta: Reinforcement Learning](https://github.com/tallamjr/univ-alberta-RL)
+    1. Fundamentals of Reinforcement Learning
+    2. Sample-based Learning Methods
+    3. Prediction and Control with Function Approximation
+    4. A Complete Reinforcement Learning System (Capstone)
+* [EPFL: Functional Scala](https://github.com/tallamjr/epfl-functional-scala)
+    1. Functional Programming Principles in Scala
+    2. Functional Program Design in Scala
+    3. Parallel programming
+    4. Big Data Analysis with Scala and Spark
+    5. Functional Programming in Scala Capstone
+* [EPFL: Digital Signal Processing](https://github.com/tallamjr/epfl-dsp)
+    1. Digital Signal Processing 1: Basic Concepts and Algorithms
+    2. Digital Signal Processing 2: Filtering
+    3. Digital Signal Processing 3: Analog vs Digital
+    4. Digital Signal Processing 4: Applications
+* [Stanford: Probabilistic Graphical Models](https://github.com/tallamjr/stanford-graphical-models)
     1. Probabilistic Graphical Models 1: Representation
     2. Probabilistic Graphical Models 2: Inference
     3. Probabilistic Graphical Models 3: Learning
-* Imperial College London: Deep Learning in TensorFlow 2.x
-* Imperial College London: Mathematics for Machine Learning
+* [Imperial College London: Deep Learning in TensorFlow 2.x](https://github.com/tallamjr/imperial-tf2-deeplearning)
+* [Imperial College London: Mathematics for Machine Learning](https://github.com/tallamjr/imperial-ml-mathematics)
     1. Mathematics for Machine Learning: Linear Algebra
     2. Mathematics for Machine Learning: Multivariate Calculus
     3. Mathematics for Machine Learning: PCA
 
 ### Individual Courses
 
-* University of Cape Town: Julia Scientific Programming
+* [University of Cape Town: Julia Scientific Programming](https://github.com/tallamjr/cape-town-scientific-julia)
 * [North-western University: Digital Image and Video Processing](https://github.com/tallamjr/nw-image-video-processing)
-* Stanford: Machine Learning
-
+* [Stanford: Machine Learning](https://github.com/tallamjr/stanford-ml)
