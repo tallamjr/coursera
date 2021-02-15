@@ -24,7 +24,7 @@ attempted on the Coursera platform
 * [Deeplearning.ai: TensorFlow: Advanced Techniques](https://github.com/tallamjr/advanced-tensorflow)
     1. **Custom Models, Layers, and Loss Functions with TensorFlow**
     2. **Custom and Distributed Training with TensorFlow**
-    3. Advanced Computer Vision with TensorFlow
+    3. **Advanced Computer Vision with TensorFlow**
     4. Apply Generative Adversarial Networks (GANs)
 * [Deeplearning.ai: TensorFlow in Practice](https://github.com/tallamjr/tensorflow-in-practice)
     1. **Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning**
